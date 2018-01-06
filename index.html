@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dist/px-loader.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    var loader = new SmartLoader({capacity:2});
+
+    image = loader.addImage('http://h5.2smart.cn/2017/sharp/images/index_bg.jpg',['image'],9)
+    audio = loader.addAudio('https://file02.xgimi.com/zcsmm/video/end.mp3',[],8);
+    video = loader.addVideo('http://static.smartisanos.cn/common/video/t1-ui.mp4',[],3)
+    data = loader.addData('bower.json',[],4);
+    document.body.appendChild(video)
+
+    loader.addCompletionListener(function () {
+        // console.log(image)
+        // console.log(video)
+        // console.log(audio)
+        // console.log(data)
+        // console.log(loader.getResource('http://static.smartisanos.cn/common/video/t1-ui.mp4'))
+        // console.log(loader.getResource('bower.json'))
+        // console.log(loader.getResource('http://h5.2smart.cn/2017/sharp/images/index_bg.jpg'))
+        video.play()
+        audio.play()
+    });
+
+
+    loader.addProgressListener(function(e) {
+
+        console.log('loaded:'+e.resource.getName()+' '+e.completedCount + ' / ' + e.totalCount)
+
+
+    });
+
+    // begin downloading images
+    loader.start(['image']);
+
+</script>
+</html>

@@ -422,14 +422,14 @@
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['pxloader'], function(PxLoader) {
+        define(['src/PxLoader'], function(PxLoader) {
             return (root.PxLoaderImage = factory(PxLoader));
         });
     } else if (typeof module === 'object' && module.exports) {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('pxloader'));
+        module.exports = factory(require('src/PxLoader'));
     } else {
         // Browser globals
         root.PxLoaderImage = factory(root.PxLoader);
@@ -542,14 +542,14 @@
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['pxloader'], function(PxLoader) {
+        define(['src/PxLoader'], function(PxLoader) {
             return (root.PxLoaderSound = factory(PxLoader));
         });
     } else if (typeof module === 'object' && module.exports) {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('pxloader'));
+        module.exports = factory(require('src/PxLoader'));
     } else {
         // Browser globals
         root.PxLoaderSound = factory(root.PxLoader);
@@ -653,14 +653,14 @@
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['pxloader'], function(PxLoader) {
+        define(['src/PxLoader'], function(PxLoader) {
             return (root.PxLoaderVideo = factory(PxLoader));
         });
     } else if (typeof module === 'object' && module.exports) {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('pxloader'));
+        module.exports = factory(require('src/PxLoader'));
     } else {
         // Browser globals
         root.PxLoaderVideo = factory(root.PxLoader);
@@ -783,14 +783,14 @@
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['pxloader'], function(PxLoader) {
+        define(['src/PxLoader'], function(PxLoader) {
             return (root.PxLoaderData = factory(PxLoader));
         });
     } else if (typeof module === 'object' && module.exports) {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('pxloader'));
+        module.exports = factory(require('src/PxLoader'));
     } else {
         // Browser globals
         root.PxLoaderData = factory(root.PxLoader);
@@ -907,14 +907,14 @@
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['pxloader'], function(PxLoader) {
+        define(['src/PxLoader'], function(PxLoader) {
             return (root.PxLoaderAudio = factory(PxLoader));
         });
     } else if (typeof module === 'object' && module.exports) {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('pxloader'));
+        module.exports = factory(require('src/PxLoader'));
     } else {
         // Browser globals
         root.PxLoaderAudio = factory(root.PxLoader);

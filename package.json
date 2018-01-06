@@ -1,39 +1,29 @@
 {
-  "name": "pxloader",
-  "version": "1.1.2",
-  "description": "PxLoader is a simple JavaScript library for creating preloaders and resource downloaders for HTML5 apps",
-  "main": "PxLoader.js",
+  "name": "smart-loader",
+  "description": "Pxloader",
+  "author": "johnnyGoo <157781745@qq.com>",
+  "main": "dist/smart-loader.js",
+  "version": "1.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --inline --hot --host 0.0.0.0 --port 8999",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thinkpixellab/PxLoader.git"
-  },
-  "keywords": [
-    "PxLoader",
-    "loader",
-    "preloader",
-    "loading",
-    "preloading"
-  ],
-  "author": {
-    "name": "Pixel Lab",
-    "url": "http://thinkpixellab.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/thinkpixellab/PxLoader/issues"
-  },
-  "homepage": "http://thinkpixellab.com/PxLoader",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "~1.0.1",
-    "grunt-contrib-uglify": "~1.0.1",
-    "grunt-contrib-jshint": "~1.0.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "grunt-contrib-concat": "~1.0.1",
-    "grunt-contrib-copy": "~1.0.0",
-    "grunt-contrib-clean": "~1.0.0"
+    "env": "^0.0.2",
+    "babel-runtime": "^6.0.0",
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "cross-env": "^1.0.6",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.4",
+    "json-loader": "^0.5.4",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
   }
 }
