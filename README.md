@@ -1,13 +1,13 @@
 PxLoader is a Javascript library that helps you download images, sound files or anything else you need before you take a specific action on your site (like showing a user interface or starting a game). You can use it to create a preloader for HTML5 games and websites.
 based on thinkpixellab/PxLoader
-#npm
+# npm
 ```
 npm install smart-loader
 
 import SmartLoader from 'smart-loader'
 
 ```
-##link
+## link
 ```html
 <script src="dist/smart-loader.js" />
 
@@ -15,7 +15,7 @@ import SmartLoader from 'smart-loader'
 
 
 
-###Usage
+### Usage
 ```javascript
 
 var loader = new SmartLoader({capacity:2});
@@ -28,7 +28,7 @@ var loader = new SmartLoader({capacity:2});
     loader.start(['image']);
 
 ```
-###Constructor
+### Constructor
 ```
 SmartLoader(option:Object)
 option.capacity  //max files on progress
@@ -39,7 +39,7 @@ option.noProgressTimeout //stop waiting if no progress has been made in the movi
 ```
 
 
-###Methods
+### Methods
 ```
 addImage(url:String, tags:Array=null, priority:Number=null, options:Object=null):img
 addAudio(url:String, tags:Array=null, priority:Number=null, options:Object=null):audio
