@@ -6,21 +6,13 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
-        libraryTarget: 'umd',
         filename: 'smart-loader.js'
     },
-    resolveLoader: {
-        root: path.join(__dirname, 'node_modules'),
-    },
     module: {
-        loaders: [
-            {
+        rules: [
+             {
                 test: /\.js$/,
-                loader: 'babel',
-                exclude: /node_modules/
-            }, {
-                test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/
             },
             {

@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="dist/px-loader.js"></script>
+    <script src="dist/smart-loader.js"></script>
 </head>
 <body>
 
 </body>
 <script>
-    var loader = new SmartLoader({capacity:2});
+    var loader = new SmartLoader({capacity:1});
 
     image = loader.addImage('http://h5.2smart.cn/2017/sharp/images/index_bg.jpg',['image'],9)
     audio = loader.addAudio('https://file02.xgimi.com/zcsmm/video/end.mp3',[],8);
     video = loader.addVideo('http://static.smartisanos.cn/common/video/t1-ui.mp4',[],3)
-    data = loader.addData('bower.json',[],4);
+    data = loader.addData('package.json',[],4);
     document.body.appendChild(video)
 
     loader.addCompletionListener(function () {
@@ -38,7 +38,7 @@
     });
 
     // begin downloading images
-    loader.start(['image']);
+    loader.start();
 
 </script>
 </html>

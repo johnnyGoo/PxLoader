@@ -174,9 +174,7 @@ function PxLoader(settings) {
 
         // first order the resources
         var compareResources = getResourceSort(orderedTags);
-        var sort=entries.sort(compareResources);
-        console.log(sort);
-
+        entries.sort(compareResources);
 
         // trigger requests for each resource
 
