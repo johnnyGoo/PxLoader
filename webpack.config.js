@@ -6,14 +6,20 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
+        libraryTarget: 'umd',
         filename: 'smart-loader.js'
     },
     module: {
         rules: [
-             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {  // << add options with presets env
+                        presets: ['env']
+                    }
+                }
             },
             {
                 test: /\.json$/,
@@ -37,11 +43,11 @@ module.exports = {
         historyApiFallback: true,
         noInfo: true
     },
-    devtool: '#eval-source-map'
+   // devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
+   // module.exports.devtool = '#source-map'
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
@@ -54,6 +60,8 @@ if (process.env.NODE_ENV === 'production') {
                 warnings: false
             }
         }),
-        new webpack.optimize.OccurenceOrderPlugin()
+        new webpack.optimize.OccurrenceOrderPlugin()
     ])
+}else{
+    module.exports.devtool = '#source-map'
 }

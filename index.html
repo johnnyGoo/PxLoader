@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <script src="dist/smart-loader.js"></script>
 </head>
 <body>
 
 </body>
 <script>
+    console.log(window)
     var loader = new SmartLoader({capacity:1});
 
     image = loader.addImage('http://h5.2smart.cn/2017/sharp/images/index_bg.jpg',['image'],9)
@@ -28,6 +30,7 @@
         video.play()
         audio.play()
     });
+
 
 
     loader.addProgressListener(function(e) {
