@@ -46,7 +46,7 @@ PxLoader.prototype.addVideo = function (url, tags, priority, options) {
     // return the video element to the caller
     return videoLoader.video;
 };
-
-window.SmartLoader=PxLoader
+let SmartLoader=PxLoader
+window.SmartLoader=SmartLoader
 export default SmartLoader
 export {SmartLoader}
