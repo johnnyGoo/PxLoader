@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <script src="node_modules/wechat-sound/dist/wechat-sound.js"></script>
     <script src="dist/smart-loader.js"></script>
 </head>
 <body>
-
+<div id="text" style="position: absolute;top:0px"></div>
 </body>
+
 <script>
+    WechatSound()
     console.log(window)
     var loader = new SmartLoader({capacity:1});
 
     image = loader.addImage('http://h5.2smart.cn/2017/sharp/images/index_bg.jpg',['image'],9)
     audio = loader.addAudio('https://file02.xgimi.com/zcsmm/video/end.mp3',[],8);
-    video = loader.addVideo('http://static.smartisanos.cn/common/video/t1-ui.mp4',[],3)
+   //video = loader.addVideo('http://static.smartisanos.cn/common/video/t1-ui.mp4',[],3)
     data = loader.addData('package.json',[],4);
-    document.body.appendChild(video)
+    //document.body.appendChild(video)
 
     loader.addCompletionListener(function () {
         // console.log(image)
@@ -27,8 +29,13 @@
         // console.log(loader.getResource('http://static.smartisanos.cn/common/video/t1-ui.mp4'))
         // console.log(loader.getResource('bower.json'))
         // console.log(loader.getResource('http://h5.2smart.cn/2017/sharp/images/index_bg.jpg'))
-        video.play()
-        audio.play()
+        //video.play()
+        //audio.play()
+        document.getElementById('text').innerHTML=('<div>audioloaded</div>')
+
+
+        console.log(loader.getResource('http://h5.2smart.cn/2017/sharp/images/index_bg.jpg',true))
+
     });
 
 

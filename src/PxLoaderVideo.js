@@ -41,6 +41,7 @@ function PxLoaderVideo(url, tags, priority, options) {
     };
 
     var cleanup = function () {
+
         self.unbind('load', onLoad);
         self.unbind(self.readyEventName, onReadyStateChange);
         self.unbind('error', onError);
@@ -65,6 +66,7 @@ function PxLoaderVideo(url, tags, priority, options) {
 
         self.video.src = url;
         self.video.load();
+
     };
 
     // called by PxLoader to check status of video (fallback in case

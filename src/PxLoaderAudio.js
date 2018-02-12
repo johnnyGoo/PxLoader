@@ -1,6 +1,6 @@
 function PxLoaderAudio(url, tags, priority, options) {
     options = options || {};
-    this.type='audio';
+    this.type = 'audio';
     var self = this,
         loader = null,
         audio;
@@ -41,6 +41,7 @@ function PxLoaderAudio(url, tags, priority, options) {
     };
 
     var cleanup = function () {
+        self.audio.pause()
         self.unbind('load', onLoad);
         self.unbind(self.readyEventName, onReadyStateChange);
         self.unbind('error', onError);
@@ -59,12 +60,14 @@ function PxLoaderAudio(url, tags, priority, options) {
         self.bind(self.readyEventName, onReadyStateChange);
         self.bind('error', onError);
 
+
         // sometimes the browser will intentionally stop downloading
         // the audio. In that case we'll consider the audio loaded
         self.bind('suspend', onLoad);
 
         self.audio.src = url;
-        self.audio.load();
+        //self.audio.load();
+        self.audio.play()
     };
 
     // called by PxLoader to check status of audio (fallback in case

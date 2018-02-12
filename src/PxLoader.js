@@ -77,20 +77,21 @@ function PxLoader(settings) {
         });
     };
 
-    this.getResource=function (name) {
+    this.getResource=function (name,clone,deep) {
         for(var i=0;i<entries.length;i++){
             var resource=entries[i].resource;
             if(resource.getName()===name){
-                if(resource.type)
-
-                return resource[resource.type]
-
-
-                return
+                if(resource.type){
+                  if(clone===true){
+                      return resource[resource.type].cloneNode(deep)
+                  }else{
+                      return resource[resource.type]
+                  }
+                }
+                return false
             }
         }
         return false;
-
     }
 
 
